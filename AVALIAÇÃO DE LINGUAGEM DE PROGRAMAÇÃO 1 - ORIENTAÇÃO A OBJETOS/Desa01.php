@@ -24,8 +24,7 @@ class criptografia
             if ($this->letra($caracter)) {
                 $caracter = chr(ord($caracter) + 3);
             }
-            //Por ser somente uma inversão, e o PHP já possuir funções que realizam essa tarefa, e por aproveitar o gancho da concateção do resultado a linha abaixo inverte o resultado
-            //Para remover a inversão basta apenas mudar a linha abaixo para $cripto.=$caracter;
+            $cripto.=$caracter;
             $cripto = $caracter . $cripto;
         }
         return $cripto;
@@ -50,4 +49,4 @@ class criptografia
 
 $des01 = new criptografia();
 $senhaOriginal = 'Texto #3';
-echo "A senha '$senhaOriginal' criptografada é :'" . $des01->criptoSenha($senhaOriginal) . "'";
+echo "Senha '$senhaOriginal' criptografada :'" . $des01->criptoSenha($senhaOriginal) . "'";
